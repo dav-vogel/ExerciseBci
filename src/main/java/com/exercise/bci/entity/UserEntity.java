@@ -7,7 +7,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
@@ -40,7 +39,7 @@ public class UserEntity implements Serializable {
     private LocalDateTime created;
 
     @Column( name = "last_login", columnDefinition="TIMESTAMP" )
-    private Date lastLogin;
+    private LocalDateTime lastLogin;
 
     @Column( name = "is_active" )
     private Boolean isActive;
@@ -88,11 +87,11 @@ public class UserEntity implements Serializable {
 		this.created = created;
 	}
 
-	public Date getLastLogin() {
+	public LocalDateTime getLastLogin() {
 		return lastLogin;
 	}
 
-	public void setLastLogin(Date lastLogin) {
+	public void setLastLogin(LocalDateTime lastLogin) {
 		this.lastLogin = lastLogin;
 	}
 

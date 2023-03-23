@@ -1,6 +1,6 @@
 package com.exercise.bci.dto.user;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -12,10 +12,10 @@ public class ResponseUserDTO extends UserDTO {
 	private UUID id;
     
     @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "MMM d, yyyy hh:mm:ss a" )
-    private Date created;
+    private LocalDateTime created;
     
     @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "MMM d, yyyy hh:mm:ss a" )
-    private Date lastLogin;
+    private LocalDateTime lastLogin;
     
     @JsonProperty("is_active")
     private Boolean isActive;

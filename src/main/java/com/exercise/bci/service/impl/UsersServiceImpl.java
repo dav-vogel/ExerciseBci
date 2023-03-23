@@ -1,7 +1,7 @@
 package com.exercise.bci.service.impl;
 
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -43,7 +43,7 @@ public class UsersServiceImpl implements UsersService {
                 	this.userRepository.findByEmail(email)
         		).orElseThrow(() -> new TechnicalBciException(Error.NOT_FOUND) );
         
-        userEntity.setLastLogin( new Date() );
+        userEntity.setLastLogin( LocalDateTime.now() );
         String token = TokenUtils.createToken(userDTO.getName(), userDTO.getEmail());
 
         return UserMapper.INSTANCE.userEntityToUserDTO(

@@ -26,15 +26,19 @@ import com.exercise.bci.service.UsersService;
 @Service
 public class UsersServiceImpl implements UsersService {
 
-	@Autowired
     private UserRepository userRepository;
     
-    @Autowired
     private UserMapper userMaper;
     
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    public UsersServiceImpl(UserRepository userRepository, UserMapper userMaper, PasswordEncoder passwordEncoder) {
+    	this.userMaper = userMaper;
+    	this.userRepository = userRepository;
+    	this.passwordEncoder = passwordEncoder;
+    }
+    
     @Override
     public ResponseUserDTO login( RequestUserDTO userDTO ) throws TechnicalBciException {
 

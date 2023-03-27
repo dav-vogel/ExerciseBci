@@ -8,7 +8,6 @@ import com.exercise.bci.dto.user.ResponseUserDTO;
 import com.exercise.bci.entity.UserEntity;
 
 
-//@Mapper( uses = PhoneMapper.class )
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
